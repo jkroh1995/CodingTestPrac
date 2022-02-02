@@ -1,0 +1,16 @@
+//수박수박수박수박수박수?
+
+class Solution {
+    public String solution(int n) {
+        String answer = "";
+        String water="수박";
+
+        if(n%2==0){
+            answer = water.repeat(n/2);
+        }
+        else{
+            answer = water.repeat(n/2) + "수";
+       }
+        return answer;
+    }
+}
