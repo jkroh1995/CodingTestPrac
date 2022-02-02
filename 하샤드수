@@ -1,0 +1,43 @@
+//하샤드 수
+
+class Solution {
+    public boolean solution(int x) {
+        boolean answer = true;
+        int sum=0;
+
+        if(x==10000){
+            answer = true;
+        }
+        else if(x>=1000&&x<9999){
+            sum=x/1000+(x/100-x/1000*10)+(x/10-x/100*10)+x%10;
+            if(x%sum==0){
+                answer=true;
+            }
+            else{
+                answer=false;
+            }
+        }
+        else if(x>=100&&x<999){
+            sum=x/100+(x/10-x/100*10)+x%10;
+            if(x%sum==0){
+                answer=true;
+            }
+            else{
+                answer=false;
+            }
+        }
+        else if(x>=10&&x<99){
+            sum=x/10+x%10;
+            if(x%sum==0){
+                answer=true;
+            }
+            else{
+                answer=false;
+            }
+        }
+        else {
+            answer=true;
+        }
+        return answer;
+    }
+}
