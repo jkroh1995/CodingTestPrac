@@ -1,0 +1,17 @@
+class Solution {
+    public long solution(long n) {
+        long answer = 0;
+        double num = Math.sqrt(n);
+        if(num%1==0){
+            answer = (long)(num+1)*(long)(num+1);
+        }
+        else{
+            answer = -1;
+        }
+
+
+        return answer;
+    }
+}
+
+//Math.sqrt()를 사용하면 double 형태의 제곱근이 나온다. 만약 정수형 제곱근이 아니라면(num%1이 0이 아니라면) 정수 제곱의 형태가 아니기 때문에 -1을 리턴한다.
