@@ -1,0 +1,40 @@
+import java.util.*;
+
+class Solution {
+    public int[] solution(int[] arr) {
+        int[] answer = {};
+
+        if (arr.length == 1) {
+            answer = new int[1];
+            answer[0] = -1;
+        } else {
+
+            int[] temp = new int[arr.length];
+
+            for (int i = 0; i < arr.length; i++) {
+                temp[i] = arr[i];
+            }
+
+            answer = new int[arr.length - 1];
+            Arrays.sort(arr);
+            int min = arr[0];
+            int count = 0;
+
+            for (int i = 0; i < temp.length; i++) {
+                if (temp[i] == min) {
+                    break;
+                } else
+                    count++;
+            }
+            for (int i = 0; i < count; i++) {
+                answer[i] = temp[i];
+            }
+            for (int i = count + 1; i < temp.length; i++) {
+                answer[i - 1] = temp[i];
+            }
+        }
+        return answer;
+    }
+}
+
+//count로 제일 작은 수의 인덱스를 확인해서 제거했다
