@@ -1,0 +1,35 @@
+import java.net.Inet4Address;
+import java.util.*;
+
+class Solution {
+    public int[] solution(int[] numbers) {
+        Integer answer[] = {};
+
+        List<Integer>temp = new ArrayList<Integer>();
+
+        Arrays.sort(numbers);
+
+        for(int i=0;i< numbers.length-1;i++){
+            for(int j=1;j<numbers.length;j++){
+                if(i<j) {
+                    temp.add(numbers[i] + numbers[j]);
+                }
+            }
+        }
+        //temp에서 중복 제거
+        Set<Integer> set = new HashSet<Integer>(temp);
+        List<Integer> newList = new ArrayList<Integer>(set);
+
+
+        //newList를 answer로 전환
+        answer = newList.toArray(new Integer[newList.size()]);
+
+        int b[] = Arrays.stream(answer).mapToInt(Integer::intValue).toArray();
+
+        //b 정렬.
+        Arrays.sort(b);
+
+        return b;
+
+    }
+}
