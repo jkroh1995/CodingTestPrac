@@ -1,0 +1,24 @@
+import java.util.*;
+
+class Solution {
+    public int[] solution(long n) {
+        String s =Long.toString(n);
+        int[] answer = new int[s.length()];
+
+        
+        char [] a = new char[s.length()];
+
+        for(int i=0;i<a.length;i++){
+            a[i]=s.charAt(i);
+        }
+        char[]b = new char[a.length];
+
+        for(int i=0;i<b.length;i++)
+            b[i]=a[b.length-i-1];
+
+        for(int i=0;i<answer.length;i++){
+            answer[i]=b[i]-'0';
+        }
+        return answer;
+    }
+}
