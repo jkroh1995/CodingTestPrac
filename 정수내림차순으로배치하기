@@ -1,0 +1,24 @@
+import java.util.*;
+
+class Solution {
+    public long solution(long n) {
+        long answer = 0;
+        String s =Long.toString(n);
+        char [] a = new char[s.length()];
+
+        for(int i=0;i<a.length;i++){
+            a[i]=s.charAt(i);
+        }
+        Arrays.sort(a);
+    
+        s=new String(a);
+        StringBuffer sb = new StringBuffer(s);
+        String reversedStr = sb.reverse().toString();
+
+        answer = Long.parseLong(reversedStr);
+
+        return answer;
+    }
+}
+
+//char 배열도 sort로 오름차순 배치가 된다. 그걸 StringBuffer로 받아서 reverse()해주면 됨.
