@@ -11,7 +11,7 @@ public class Solution {
                 n=n/10;
                 answer+=num;
             }
-            num=n%10;
+            num=n%10; //제일 큰 자릿 수 더해줌
             answer+=num;
         }
        
