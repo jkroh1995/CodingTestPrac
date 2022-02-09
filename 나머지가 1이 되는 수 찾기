@@ -1,0 +1,11 @@
+class Solution {
+    public int solution(int n) {
+        int answer = 0;
+        int div=1;
+        while(n%div!=1){
+            div++;
+        }
+        answer = div;
+        return answer;
+    }
+}
