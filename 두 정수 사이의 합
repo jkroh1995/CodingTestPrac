@@ -1,0 +1,22 @@
+class Solution {
+    public long solution(int a, int b) {
+        long answer = 0;
+        long a1= (long)a;
+        long b1= (long)b;
+        long sum =0;
+        if(a>b){
+            for(long i=b1;i<a1+1;i++){
+                sum+=i;
+            }
+        }
+        else{
+            for(long i=a1;i<b1+1;i++){
+                sum+=i;
+            }
+        }
+        answer=sum;
+        
+
+        return answer;
+    }
+}
