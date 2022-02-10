@@ -29,3 +29,5 @@ class Solution {
         return answer;
     }
 }
+
+//math.pow(int, int)는 
