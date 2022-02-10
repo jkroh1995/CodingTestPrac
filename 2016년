@@ -1,0 +1,322 @@
+class Solution {
+    public String solution(int a, int b) {
+        String answer = "";
+        int day;
+
+        switch (a) {
+            case 1:
+                day = (b - 1) % 7;
+                switch (day) {
+                    case 0:
+                        answer = "FRI";
+                        break;
+                    case 1:
+                        answer = "SAT";
+                        break;
+                    case 2:
+                        answer = "SUN";
+                        break;
+                    case 3:
+                        answer = "MON";
+                        break;
+                    case 4:
+                        answer = "TUE";
+                        break;
+                    case 5:
+                        answer = "WED";
+                        break;
+                    case 6:
+                        answer = "THU";
+                        break;
+                }
+                break;
+                    case 2:
+                        day = (b - 1) % 7;
+                        switch (day) {
+                            case 0:
+                                answer = "MON";
+                                break;
+                            case 1:
+                                answer = "TUE";
+                                break;
+                            case 2:
+                                answer = "WED";
+                                break;
+                            case 3:
+                                answer = "THU";
+                                break;
+                            case 4:
+                                answer = "FRI";
+                                break;
+                            case 5:
+                                answer = "SAT";
+                                break;
+                            case 6:
+                                answer = "SUN";
+                                break;
+                        }
+                        break;
+                    case 3:
+                        day = (b - 1) % 7;
+                        switch (day) {
+                            case 0:
+                                answer = "TUE";
+                                break;
+                            case 1:
+                                answer = "WED";
+                                break;
+                            case 2:
+                                answer = "THU";
+                                break;
+                            case 3:
+                                answer = "FRI";
+                                break;
+                            case 4:
+                                answer = "SAT";
+                                break;
+                            case 5:
+                                answer = "SUN";
+                                break;
+                            case 6:
+                                answer = "MON";
+                                break;
+                        }
+                        break;
+                    case 4:
+                        day = (b - 1) % 7;
+                        switch (day) {
+                            case 0:
+                                answer = "FRI";
+                                break;
+                            case 1:
+                                answer = "SAT";
+                                break;
+                            case 2:
+                                answer = "SUN";
+                                break;
+                            case 3:
+                                answer = "MON";
+                                break;
+                            case 4:
+                                answer = "TUE";
+                                break;
+                            case 5:
+                                answer = "WED";
+                                break;
+                            case 6:
+                                answer = "THU";
+                                break;
+                        }
+                        break;
+                    case 5:
+                        day = (b - 1) % 7;
+                        switch (day) {
+                            case 0:
+                                answer = "SUN";
+                                break;
+                            case 1:
+                                answer = "MON";
+                                break;
+                            case 2:
+                                answer = "TUE";
+                                break;
+                            case 3:
+                                answer = "WED";
+                                break;
+                            case 4:
+                                answer = "THU";
+                                break;
+                            case 5:
+                                answer = "FRI";
+                                break;
+                            case 6:
+                                answer = "SAT";
+                                break;
+                        }
+                        break;
+                    case 6:
+                        day = (b - 1) % 7;
+                        switch (day) {
+                            case 0:
+                                answer = "WED";
+                                break;
+                            case 1:
+                                answer = "THU";
+                                break;
+                            case 2:
+                                answer = "FRI";
+                                break;
+                            case 3:
+                                answer = "SAT";
+                                break;
+                            case 4:
+                                answer = "SUN";
+                                break;
+                            case 5:
+                                answer = "MON";
+                                break;
+                            case 6:
+                                answer = "TUE";
+                                break;
+                        }
+                        break;
+                    case 7:
+                        day = (b - 1) % 7;
+                        switch (day) {
+                            case 0:
+                                answer = "FRI";
+                                break;
+                            case 1:
+                                answer = "SAT";
+                                break;
+                            case 2:
+                                answer = "SUN";
+                                break;
+                            case 3:
+                                answer = "MON";
+                                break;
+                            case 4:
+                                answer = "TUE";
+                                break;
+                            case 5:
+                                answer = "WED";
+                                break;
+                            case 6:
+                                answer = "THU";
+                                break;
+                        }
+                        break;
+                    case 8:
+                        day = (b - 1) % 7;
+                        switch (day) {
+                            case 0:
+                                answer = "MON";
+                                break;
+                            case 1:
+                                answer = "TUE";
+                                break;
+                            case 2:
+                                answer = "WED";
+                                break;
+                            case 3:
+                                answer = "THU";
+                                break;
+                            case 4:
+                                answer = "FRI";
+                                break;
+                            case 5:
+                                answer = "SAT";
+                                break;
+                            case 6:
+                                answer = "SUN";
+                                break;
+                        }
+                        break;
+                    case 9:
+                        day = (b - 1) % 7;
+                        switch (day) {
+                            case 0:
+                                answer = "THU";
+                                break;
+                            case 1:
+                                answer = "FRI";
+                                break;
+                            case 2:
+                                answer = "SAT";
+                                break;
+                            case 3:
+                                answer = "SUN";
+                                break;
+                            case 4:
+                                answer = "MON";
+                                break;
+                            case 5:
+                                answer = "TUE";
+                                break;
+                            case 6:
+                                answer = "WED";
+                                break;
+                        }
+                        break;
+                    case 10:
+                        day = (b - 1) % 7;
+                        switch (day) {
+                            case 0:
+                                answer = "SAT";
+                                break;
+                            case 1:
+                                answer = "SUN";
+                                break;
+                            case 2:
+                                answer = "MON";
+                                break;
+                            case 3:
+                                answer = "TUE";
+                                break;
+                            case 4:
+                                answer = "WED";
+                                break;
+                            case 5:
+                                answer = "THU";
+                                break;
+                            case 6:
+                                answer = "FRI";
+                                break;
+                        }
+                        break;
+                    case 11:
+                        day = (b - 1) % 7;
+                        switch (day) {
+                            case 0:
+                                answer = "TUE";
+                                break;
+                            case 1:
+                                answer = "WED";
+                                break;
+                            case 2:
+                                answer = "THU";
+                                break;
+                            case 3:
+                                answer = "FRI";
+                                break;
+                            case 4:
+                                answer = "SAT";
+                                break;
+                            case 5:
+                                answer = "SUN";
+                                break;
+                            case 6:
+                                answer = "MON";
+                                break;
+                        }
+                        break;
+                    case 12:
+                        day = (b - 1) % 7;
+                        switch (day) {
+                            case 0:
+                                answer = "THU";
+                                break;
+                            case 1:
+                                answer = "FRI";
+                                break;
+                            case 2:
+                                answer = "SAT";
+                                break;
+                            case 3:
+                                answer = "SUN";
+                                break;
+                            case 4:
+                                answer = "MON";
+                                break;
+                            case 5:
+                                answer = "TUE";
+                                break;
+                            case 6:
+                                answer = "WED";
+                                break;
+                        }
+                }
+        
+        return answer;
+    }
+}
