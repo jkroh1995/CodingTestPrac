@@ -30,4 +30,4 @@ class Solution {
     }
 }
 
-//math.pow(int, int)는 
+//math.pow(int, int)는 제곱함수다
