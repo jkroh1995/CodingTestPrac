@@ -1,7 +1,22 @@
 class Solution {
     public int solution(int n, int[] lost, int[] reserve) {
         int answer = n-lost.length;
+        
+        //여벌을 가져온 사람이 도난 당했을 때
         for(int i=0;i<lost.length;i++){
+            for(int j=0;j<reserve.length;j++){
+                if(reserve[j]==lost[i]){
+                    reserve[j]=-2;
+                    lost[i]=-2;
+                }
+            }
+        }
+        //처리한 이후
+        for(int i=0;i<lost.length;i++){
+            if(lost[i]==-2){
+                answer++;
+                continue;
+            }
             for(int j=0;j<reserve.length;j++){
                 if(reserve[j]+1==lost[i]||reserve[j]-1==lost[i]){
                     answer++;
