@@ -1,18 +1,104 @@
+import java.util.*;
+
 class Solution {
     public int[] solution(int[] answers) {
-        int[] answer = {};
+        
 
         int correct_1=0;
         int correct_2=0;
         int correct_3=0;
-        int count = 1;
+
         //첫 놈은 끝냄
         for(int i=0;i<answers.length;i++){
             if(answers[i]%6==(((i-(i/5*5)+1))%6)){
                 correct_1++;
             }
-
         }
+
+        for(int i=0;i<answers.length;i++){
+            if(i%2==0){
+                if(answers[i]==2){
+                    correct_2++;
+                }
+            }
+            else if(i%2==1) {
+                if(i%8==1){
+                    if(answers[i]%6==1){
+                        correct_2++;
+                    }
+                }
+                else if(i%8==3){
+                    if(answers[i]%6==3){
+                        correct_2++;
+                    }
+                }
+                else if(i%8==5){
+                    if(answers[i]%6==4){
+                        correct_2++;
+                    }
+                }
+                else if(i%8==7){
+                    if(answers[i]%6==5){
+                        correct_2++;
+                    }
+
+                }
+            }
+        }
+
+        for(int i=0;i< answers.length;i++){
+            if(i%10==0||i%10==1){
+                if(answers[i]==3){
+                    correct_3++;
+                }
+            }
+            else if(i%10==2||i%10==3){
+                if(answers[i]==1){
+                    correct_3++;
+                }
+            }
+            else if(i%10==4||i%10==5){
+                if(answers[i]==2){
+                    correct_3++;
+                }
+            }
+            else if(i%10==6||i%10==7){
+                if(answers[i]==4){
+                    correct_3++;
+                }
+            }
+            else if(i%10==8||i%10==9){
+                if(answers[i]==5){
+                    correct_3++;
+                }
+            }
+        }
+
+        int max = correct_1;
+        if(correct_2>max){
+            max=correct_2;
+        }
+        if(correct_3>max){
+            max=correct_3;
+        }
+
+        ArrayList<Integer> num = new ArrayList<>();
+        if(max==correct_1){
+            num.add(1);
+        }
+        if(max==correct_2){
+            num.add(2);
+        }
+        if(max==correct_3){
+            num.add(3);
+        }
+        int [] answer = new int[num.size()];
+        int size = 0;
+        for(int temp : num){
+            answer[size++]=temp;
+        }
+
+
         return answer;
     }
 }
