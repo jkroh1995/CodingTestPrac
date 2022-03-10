@@ -1,0 +1,25 @@
+import java.util.*;
+
+class Solution {
+    public int solution(int[] nums) {
+        int answer = 0;
+        int size = nums.length/2;
+
+        ArrayList<Integer>arrayList=new ArrayList<>();
+
+        for(int i=0;i<nums.length;i++){
+            if(arrayList.indexOf(nums[i])==-1){
+                arrayList.add(nums[i]);
+            }
+        }
+        
+        if(arrayList.size()<size){
+            answer = arrayList.size();
+        }
+        else{
+            answer = size;
+        }
+        
+        return answer;
+    }
+}
