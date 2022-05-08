@@ -1,3 +1,5 @@
+//시간초과가 떠요 선생님
+
 import java.util.*;
 
 class Solution {
@@ -22,38 +24,39 @@ class Solution {
                 }
             }
         }
+        String [] reported_list = new String[resultReport.length];
+        String [] reporting_list = new String[resultReport.length];
+
+        for(int i=0;i<resultReport.length;i++) {
+            String s = resultReport[i];
+            int idx = s.indexOf(" "); //공백의 index를 찾는다.
+
+            String reporting_name=s.substring(0, idx); //신고한 사람 이름
+            String reported_name=s.substring(idx+1); // 신고당한 사람 이름
+
+            reported_list[i]=reported_name;
+            reporting_list[i]=reporting_name;
+
+        }
 
         //count가 k값을 넘기면 그 사람을 신고한 사람을 answer에 증가
-
+        ArrayList<String>new_name = new ArrayList<>();
         for(int i=0;i<count.length;i++){
             if(count[i]>=k){
-                for(int j=0;j< resultReport.length;j++){
-                    String s = resultReport[j];
-                    int idx = s.indexOf(" ");
-                    String reporting_name=s.substring(0, idx); //신고한 사람 이름
-                    String reported_name=s.substring(idx+1); // 신고당한 사람 이름
-                    if(reported_name.equals(id_list[i])){
-                        for(int t=0;t<id_list.length;t++){
-                            if(reporting_name.equals(id_list[t]))
-                                answer[t]++;
-                        }
+                for(int j=0;j<resultReport.length;j++){
+                    if(reported_list[j].equals(id_list[i])){
+                        new_name.add(reporting_list[j]);
                     }
                 }
             }
         }
-
-
-
+        for(int i=0;i< new_name.size();i++){
+            for(int j=0;j< id_list.length;j++){
+                if(new_name.get(i).equals(id_list[j])){
+                    answer[j]++;
+                }
+            }
+        }
         return answer;
     }
 }
-
-
-//새로 배열 형성해서 신고당한 사람 이름만(공백 이후만) 남기기
-        String [] Reported = new String[resultReport.length];
-
-        for(int i=0;i<resultReport.length;i++){
-            String s = resultReport[i];
-            int idx = s.indexOf(" "); //공백의 index를 찾는다.
-            Reported[i]=s.substring(idx+1); //index 이후로만 resultReport[i]값을 남긴다.
-        }
