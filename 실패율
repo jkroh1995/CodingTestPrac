@@ -13,8 +13,20 @@ class Solution {
         double [] fail = new double[N+1];
 
         for(int i=0;i<fail.length;i++){
-
+            if(i==0) {
+                fail[i] = player[i]/human;
+            }
+            else{
+                double clear=0;
+                for(int j=0;j<i;j++){
+                    clear+=player[j];
+                }
+                fail[i]=player[i]/(human-clear);
+            }
         }
+        
         return answer;
     }
 }
+
+//실패율까지는 구했는데 그 다음 배열을 어떻게 해야할까 생각해봅시다.
