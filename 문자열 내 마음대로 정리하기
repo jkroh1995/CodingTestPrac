@@ -1,0 +1,35 @@
+import java.util.*;
+
+
+class Solution {
+    public String[] solution(String[] strings, int n) {
+        String[] answer = new String[strings.length];
+
+        int [] temp = new int[strings.length];
+        Arrays.sort(strings);
+        for(int i=0;i< strings.length;i++){
+            temp[i]=strings[i].charAt(n);
+        }
+        int [] temp_2 = new int[strings.length];
+
+        for(int i=0;i< strings.length;i++){
+            temp_2[i]=temp[i];
+        }
+
+        Arrays.sort(temp_2);
+
+        for(int i=0;i< strings.length;i++){
+            for(int j=0;j< strings.length;j++){
+                if(temp_2[i]==temp[j]){
+                    temp[j]=-1;
+                    answer[i]=strings[j];
+                    break;
+                }
+            }
+        }
+
+        return answer;
+    }
+}
+
+//애초에 sort를 갈겨버리면 인덱스에서 char값이 같으면 그 다음꺼 알아서 사전순으로 나온다.
