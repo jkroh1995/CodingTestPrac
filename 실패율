@@ -15,8 +15,8 @@ class Solution {
             player[(int) (x-1)]++;
         }
         double [] fail = new double[N];
-        
-        //여기 else문 부분을 고쳐야함 fail[i]를 어떻게 할거냐.
+
+        //실패율 계산(다 클리어 한 사람은 안세도 되니까 N)
         for(int i=0;i<fail.length;i++){
             if(i==0) {
                 fail[i] = player[i]/human;
@@ -26,9 +26,18 @@ class Solution {
                 for(int j=0;j<i;j++){
                     clear+=player[j];
                 }
-                fail[i]=player[i]/(human-clear);
+                double guy = human-clear;
+
+                if(guy==0){
+                    fail[i]=0.0;
+                }
+                else {
+                    fail[i] = player[i] / (human - clear);
+                }
             }
         }
+        
+        //순서대로 출력하기
         double [] temp = new double[N];
 
         for(int i=0;i<N;i++){
@@ -37,6 +46,7 @@ class Solution {
 
         Arrays.sort(temp);
 
+       
         for(int i=N-1;i>=0;i--){
             for(int j=0;j<N;j++){
                 if(temp[i]==fail[j]){
@@ -50,5 +60,3 @@ class Solution {
         return answer;
     }
 }
-
-//5 [3,3,3,3]을 처리하면 될 것.
