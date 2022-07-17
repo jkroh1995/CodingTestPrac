@@ -3,14 +3,18 @@ import java.util.*;
 class Solution {
     public int[] solution(int N, int[] stages) {
         int[] answer = new int[N];
+
+        //전체 게이머 수
         double human = stages.length;
 
+
+        //각 스테이지에 몇명 있는지를 player에 담음 클리어까지 세야하니까 N+1
         double[] player = new double[N+1];
         for (int i = 0; i < stages.length; i++) {
             double x = (double)stages[i];
             player[(int) (x-1)]++;
         }
-        double [] fail = new double[N+1];
+        double [] fail = new double[N];
 
         for(int i=0;i<fail.length;i++){
             if(i==0) {
@@ -24,9 +28,26 @@ class Solution {
                 fail[i]=player[i]/(human-clear);
             }
         }
-        
+        double [] temp = new double[N];
+
+        for(int i=0;i<N;i++){
+            temp[i]=fail[i];
+        }
+
+        Arrays.sort(temp);
+
+        for(int i=N-1;i>=0;i--){
+            for(int j=0;j<N;j++){
+                if(temp[i]==fail[j]){
+                    fail[j]=-1;
+                    answer[N-i-1]=j+1;
+                    break;
+                }
+            }
+        }
+
         return answer;
     }
 }
 
-//실패율까지는 구했는데 그 다음 배열을 어떻게 해야할까 생각해봅시다.
+//5 [3,3,3,3]을 처리하면 될 것.
