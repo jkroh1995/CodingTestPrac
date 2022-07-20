@@ -1,6 +1,35 @@
+import java.util.*;
+import java.math.*;
+import java.util.regex.Pattern;
+
 class Solution {
     public int solution(String dartResult) {
         int answer = 0;
+        //S,D,T,*,#으로 문자열 나눔
+        StringTokenizer st = new StringTokenizer(dartResult, "SDT*#",true);
+        
+        //가변길이니까 list로 받고
+        ArrayList<String>temp = new ArrayList<>();
+        
+        //list에 하나씩 넣어줌
+        while(st.hasMoreTokens()){
+            temp.add(st.nextToken());
+        }
+
+        
+        //이제 점수를 구해야하는데...
+        int count=1;
+        int i=0;
+        while(count!=temp.size()){
+            int score =0;
+            while(){
+
+
+                i++;
+            }
+        }
+
+
         return answer;
     }
 }
