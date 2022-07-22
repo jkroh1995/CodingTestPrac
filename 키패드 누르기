@@ -3,17 +3,23 @@ import java.util.*;
 class Solution {
     public String solution(int[] numbers, String hand) {
         String answer = "";
+        int left=1000;
+        int right=1000;
         if(hand.equals("right")){
             for(int i=0;i< numbers.length;i++){
              if(numbers[i]==1||numbers[i]==4||numbers[i]==7){
                  answer+="L";
+                 left = numbers[i];
              }else if(numbers[i]==3||numbers[i]==6||numbers[i]==9){
                  answer+="R";
+                 right=numbers[i];
              }else if(numbers[i]==2||numbers[i]==5||numbers[i]==8||numbers[i]==0){
                 if(i==0){
                     answer+="R";
                 }else{
+                    if(Math.abs(numbers[i]-left)<Math.abs(numbers[i]-right)){
 
+                    }
                 }
              }
           }
@@ -22,8 +28,10 @@ class Solution {
             for(int i=0;i< numbers.length;i++){
                 if(numbers[i]==1||numbers[i]==4||numbers[i]==7){
                 answer+="L";
+                left=numbers[i];
             }else if(numbers[i]==3||numbers[i]==6||numbers[i]==9){
                 answer+="R";
+                right=numbers[i];
             }else if(numbers[i]==2||numbers[i]==5||numbers[i]==8||numbers[i]==0){
                     if(i==0){
                         answer+="L";
