@@ -13,21 +13,16 @@ class Solution {
                 }
             }
         }
-
        int i=0;
         while(true) {
-            if (i == list.size() - 1||list.size()==0) {
-                break;
-            } else {
+            if (i == list.size() - 1||list.size()==0) break;
+            else {
                 if (list.get(i) == list.get(i + 1)) {
                     list.remove(i);
                     list.remove(i);
                     answer += 2;
                     i = 0;
-                } else {
-                    i++;
-                }
-
+                } else  i++;
             }
         }
         return answer;
