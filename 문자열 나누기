@@ -1,0 +1,31 @@
+import java.util.ArrayList;
+import java.util.List;
+
+class Solution {
+    public int solution(String s) {
+        int [] tmp = {1,0};
+        int i=1;
+        List<String> list = new ArrayList<>();
+        while(i<s.length()){
+            char indexChar = s.charAt(0);
+            if(s.charAt(i)==indexChar){
+                tmp[0]++;
+            }
+            else{
+                tmp[1]++;
+            }
+            i++;
+            if(tmp[0]==tmp[1]){
+                list.add(s.substring(0,i));
+                s=s.substring(i);
+                tmp[0]=1;
+                tmp[1]=0;
+                i=1;
+            }
+        }
+        if(s.length()!=0){
+            list.add(s);
+        }
+        return list.size();
+    }
+}
