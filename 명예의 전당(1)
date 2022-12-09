@@ -1,0 +1,23 @@
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+class Solution {
+    public List<Integer> solution(int k, int[] score) {
+        List<Integer> answer = new ArrayList<>();
+        List<Integer> tmp = new ArrayList<>();
+        for(int i=0;i<score.length;i++){
+            if(i<k){
+                tmp.add(score[i]);
+                Collections.sort(tmp);
+                answer.add(tmp.get(0));
+                continue;
+            }
+            tmp.add(score[i]);
+            Collections.sort(tmp);
+            tmp.remove(0);
+            answer.add(tmp.get(0));
+        }
+        return answer;
+    }
+}
