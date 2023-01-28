@@ -1,0 +1,51 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+import java.util.regex.Pattern;
+
+class Solution {
+    public String solution(String X, String Y) {
+
+        StringBuilder sb = new StringBuilder();
+
+        List<String>xList = new ArrayList<>(Arrays.asList(X.split("")));
+        List<String>yList = new ArrayList<>(Arrays.asList(Y.split("")));
+
+        int [] xNumbers = new int [10];
+        int [] yNumbers = new int [10];
+
+        for(String number : xList){
+            xNumbers[9-Integer.parseInt(number)]++;
+        }
+
+        for(String number : yList){
+            yNumbers[9-Integer.parseInt(number)]++;
+        }
+
+        for(int i=0;i<10;i++){
+            if(xNumbers[i]==0||yNumbers[i]==0){
+                continue;
+            }
+            if(xNumbers[i]>=yNumbers[i]){
+                sb.append(String.valueOf((9-i)).repeat(yNumbers[i]));
+            }
+            else{
+                sb.append(String.valueOf((9-i)).repeat(xNumbers[i]));
+            }
+        }
+
+        String answer = sb.toString();
+
+        if(answer.isEmpty()){
+            return "-1";
+        }
+        String pattern = "^[0]*$";
+        
+        if(Pattern.matches(pattern, answer)){
+            return "0";
+        }
+
+        return answer;
+    }
+}
